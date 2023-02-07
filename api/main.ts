@@ -10,11 +10,9 @@ import { fetchContributorStats } from '@/fetchContributorStats';
 import { fetchAllContributorStats } from '@/fetchAllContributorStats';
 import { isLocaleAvailable } from '@/translations';
 import express from 'express';
-import compression from 'compression';
 
 // Initialize Express
 const app = express();
-app.use(compression);
 
 // Create GET request
 app.get('/api', async (req, res) => {
