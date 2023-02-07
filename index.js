@@ -36282,7 +36282,6 @@ app.get('/api', async (req, res) => {
         const result = await (combine_all_yearly_contributions
             ? (0,_fetchAllContributorStats__WEBPACK_IMPORTED_MODULE_3__.fetchAllContributorStats)(username)
             : (0,_fetchContributorStats__WEBPACK_IMPORTED_MODULE_2__.fetchContributorStats)(username));
-        console.log(result);
         const name = result.name;
         const contributorStats = result.repositoriesContributedTo.nodes;
         const cacheSeconds = (0,_common_utils__WEBPACK_IMPORTED_MODULE_1__.clampValue)(parseInt(cache_seconds || _common_utils__WEBPACK_IMPORTED_MODULE_1__.CONSTANTS.FOUR_HOURS, 10), _common_utils__WEBPACK_IMPORTED_MODULE_1__.CONSTANTS.FOUR_HOURS, _common_utils__WEBPACK_IMPORTED_MODULE_1__.CONSTANTS.ONE_DAY);
