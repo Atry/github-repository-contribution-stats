@@ -26310,7 +26310,7 @@ const fetchContributorStats = async (username) => {
             },
             data: {
                 query: `query {
-                  user(login: "${username}") {
+                  user(login: ${JSON.stringify(username)}) {
                     id
                     name
                     repositoriesContributedTo(first :100, contributionTypes: COMMIT) {
@@ -35545,6 +35545,7 @@ app.get('/api', async (req, res) => {
         }));
     }
     catch (err) {
+        console.error(err);
         return res.send((0,_common_utils__WEBPACK_IMPORTED_MODULE_1__.renderError)(err.message, err.secondaryMessage));
     }
 });

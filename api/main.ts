@@ -74,6 +74,7 @@ app.get('/api', async (req, res) => {
       }),
     );
   } catch (err: any) {
+    console.error(err)
     return res.send(renderError(err.message, err.secondaryMessage));
   }
 });
